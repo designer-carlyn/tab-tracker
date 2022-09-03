@@ -11,6 +11,7 @@ const port = process.env.PORT || 8081;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.static('uploads'))
 
 // Database Connection
 mongoose.connect(process.env.DB_URI).then(function() {
