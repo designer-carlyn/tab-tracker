@@ -17,10 +17,10 @@
                 </v-card-text>
 
                 <v-card-actions>
-                    <v-btn color="orange lighten-1" dark>
+                    <v-btn color="orange lighten-1" dark :to="{ name: 'EditPost', params: { id: this.$route.params.id } }">
                         Edit
                     </v-btn>
-                    <v-btn color="red lighten-1" dark>
+                    <v-btn color="red lighten-1" dark @click="removePost(post._id)">
                         Delete
                     </v-btn>
                 </v-card-actions>
@@ -43,6 +43,13 @@
 
         async created() {
             this.post = await API.getPostById(this.$route.params.id);
+        },
+
+        methods: {
+            async removePost(id) {
+                const response = await API.deletePost(id)
+                this.$router.push({name: 'Home', params: { message: response.message }})
+            }
         }
     }
 </script>

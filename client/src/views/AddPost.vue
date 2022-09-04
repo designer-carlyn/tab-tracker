@@ -42,7 +42,6 @@ export default {
     methods: {
         selectFile(file) {
             this.image = file[0];
-            console.log(this.image = file[0])
         },
         async submitForm() {
             const formData = new FormData();

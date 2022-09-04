@@ -23,7 +23,13 @@ export default class API {
 
     // Update Post by ID
     static async updatePostById(id, post) {
-        const res = await axios.put(`${url}/${id}`, post);
+        const res = await axios.patch(`${url}/${id}`, post);
+        return res.data
+    }
+
+    // Delete Post
+    static async deletePost(id) {
+        const res = await axios.post(`${url}/${id}`);
         return res.data
     }
 }
