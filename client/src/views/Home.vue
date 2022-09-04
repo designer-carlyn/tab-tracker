@@ -3,8 +3,8 @@
     <v-container>
       <v-row>
         <v-col sm="4" xl="3" v-for="item in posts" :key="item._id">
-          <v-card class="mx-auto" max-width="344">
-            <v-img :src="`http://localhost:8081/${item.image}`" height="200px"></v-img>
+          <v-card class="mx-auto" max-width="344" :to="{ name: 'Post', params: { id: item._id } }">
+            <v-img :src="`${item.image}`" height="350"></v-img>
 
             <v-card-title>
               {{ item.title }}
@@ -14,6 +14,10 @@
               {{ item.category}}
             </v-card-subtitle>
 
+            <v-card-text class="text--primary">
+              {{ item.content }}
+            </v-card-text>
+
             <v-card-actions>
               <v-btn color="orange lighten-2" outlined>
                 Edit
@@ -21,23 +25,7 @@
               <v-btn color="red lighten-2" outlined>
                 Delete
               </v-btn>
-
-              <v-spacer></v-spacer>
-
-              <v-btn icon @click="show = !show">
-                <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-              </v-btn>
             </v-card-actions>
-
-            <v-expand-transition>
-              <div v-show="show">
-                <v-divider></v-divider>
-
-                <v-card-text>
-                  {{ item.content }}
-                </v-card-text>
-              </div>
-            </v-expand-transition>
           </v-card>
         </v-col>
       </v-row>
@@ -54,7 +42,6 @@
     data() {
       return {
         posts: [],
-        show: false,
       }
     },
 
