@@ -16,8 +16,14 @@ export default class API {
     }
 
     // Add Post
-    static async addPost(data) {
-        const res = await axios.post(`${url}`, data);
+    static async addPost(post) {
+        const res = await axios.post(url, post);
+        return res.data
+    }
+
+    // Update Post by ID
+    static async updatePostById(id, post) {
+        const res = await axios.put(`${url}/${id}`, post);
         return res.data
     }
 }

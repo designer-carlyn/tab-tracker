@@ -17,10 +17,10 @@
                 </v-card-text>
 
                 <v-card-actions>
-                    <v-btn color="orange lighten-2" outlined>
+                    <v-btn color="orange lighten-1" dark>
                         Edit
                     </v-btn>
-                    <v-btn color="red lighten-2" outlined>
+                    <v-btn color="red lighten-1" dark>
                         Delete
                     </v-btn>
                 </v-card-actions>
