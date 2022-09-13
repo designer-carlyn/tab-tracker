@@ -13,7 +13,7 @@
               {{ item.title }}
             </v-card-title>
 
-            <v-card-subtitle>
+            <v-card-subtitle class="text-uppercase">
               {{ item.category}}
             </v-card-subtitle>
 

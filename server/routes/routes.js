@@ -22,5 +22,6 @@ router.get('/:id', API.fetchPostByID);
 router.post('/', upload, API.createPost);
 router.patch('/:id', upload, API.updatePost);
 router.post('/:id', API.deletePost);
+router.get('/category/:category', API.fethPostByCategory);
 
 module.exports = router;

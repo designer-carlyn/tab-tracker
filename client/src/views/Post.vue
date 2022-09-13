@@ -8,7 +8,7 @@
                     {{ post.title }}
                 </v-card-title>
 
-                <v-card-subtitle>
+                <v-card-subtitle class="text-uppercase">
                     {{ post.category}}
                 </v-card-subtitle>
 
